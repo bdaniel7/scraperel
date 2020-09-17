@@ -11,14 +11,12 @@ namespace scraperel.api
 {
 	public class Startup
 	{
-		public Startup(IConfiguration configuration, IWebHostEnvironment environment)
+		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
-			Environment = environment;
 		}
 
 		public IConfiguration Configuration { get; }
-		public IWebHostEnvironment Environment { get; }
 
 		public void ConfigureServices(IServiceCollection services)
 		{
@@ -35,10 +33,12 @@ namespace scraperel.api
 				                                        options.UseSqlServer(scraperCS,
 						                                        sql => sql.MigrationsAssembly(scraperAssemblyName)
 						                                        ).EnableSensitiveDataLogging();
-			                                        }).AddDbContextPool<ScraperDbContext>(options =>
-																								{
-																									options.UseSqlServer(scraperCS);
-																								});
+			                                        })
+																							// .AddDbContextPool<ScraperDbContext>(options =>
+																							// 	{
+																							// 		options.UseSqlServer(scraperCS);
+																							// 	})
+																							;
 		}
 
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
