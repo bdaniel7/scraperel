@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scraperel.scraper", "scraperel.scraper\scraperel.scraper.csproj", "{5E3A5353-940A-41FD-B327-F2F513808BA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scraperel.api", "scraperel.api\scraperel.api.csproj", "{DD20663F-86E2-4300-BF71-B5B7A4BF2201}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E3A5353-940A-41FD-B327-F2F513808BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3A5353-940A-41FD-B327-F2F513808BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3A5353-940A-41FD-B327-F2F513808BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3A5353-940A-41FD-B327-F2F513808BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD20663F-86E2-4300-BF71-B5B7A4BF2201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD20663F-86E2-4300-BF71-B5B7A4BF2201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD20663F-86E2-4300-BF71-B5B7A4BF2201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD20663F-86E2-4300-BF71-B5B7A4BF2201}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
