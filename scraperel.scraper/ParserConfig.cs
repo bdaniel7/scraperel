@@ -13,7 +13,7 @@ namespace scraperel.scraper
 		public string DishRootPath { get; set; } = "div.menu-item";
 
 		public string DishNamePath { get; set; } = "div.menu-item h3";
-		public string DishDescriptionPath { get; set; }
+		public string DishDescriptionPath { get; set; } = "article.menu-item-details div p";
 
 	}
 }

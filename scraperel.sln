@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{A5492C
 ProjectSection(SolutionItems) = preProject
 	docker-compose.yml = docker-compose.yml
 	create-network.sh = create-network.sh
+	Dockerfile = Dockerfile
+	.dockerignore = .dockerignore
 EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scraperel.model", "scraperel.model\scraperel.model.csproj", "{7CEA48DF-D345-405C-848B-D1056587B263}"

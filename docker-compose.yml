@@ -1,0 +1,58 @@
+version: "3.5"
+
+services:
+   scraperel.db:
+     restart: always
+     image: microsoft/mssql-server-linux:2017-latest
+     container_name: sql2017
+     hostname: 'sql2017'
+     ports:
+       - 14330:1433
+       - 14340:1434
+     networks:
+       - scraperel-network
+     environment:
+       - 'ACCEPT_EULA=Y'
+       - 'SA_PASSWORD=12wsW99RWQERDVax'
+     volumes:
+       - ./sql2017:/var/opt/mssql
+
+   scraperel.api:
+     restart: always
+     image: scraperel
+     build:
+       context: .
+       dockerfile: ./Dockerfile
+     networks:
+       - scraperel-network
+     ports:
+       - 8900:8080
+     environment:
+       - COMPlus_EnableDiagnostics=0
+       - ASPNETCORE_ENVIRONMENT=Docker
+     depends_on:
+       - scraperel.db
+     links:
+       - scraperel.db:db
+     volumes:
+       - ./scraperel.api/log:/src/log
+
+   scraperel.seq:
+     restart: always
+     container_name: seq
+     hostname: 'seq'
+     image: datalust/seq:latest
+     ports:
+       - 8000:80
+       - 5341:5341
+     networks:
+       - scraperel-network
+     volumes:
+       - ./seq/data:/data
+     environment:
+       ACCEPT_EULA: Y
+
+networks:
+  scraperel-network:
+    name: scraperel-network
+    external: true

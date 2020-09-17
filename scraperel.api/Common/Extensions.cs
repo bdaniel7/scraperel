@@ -36,7 +36,7 @@ namespace scraperel.api.Common
                                                 .MinimumLevel.Is(level)
                                                 .Enrich.WithProperty("Environment",
                                                      context.HostingEnvironment.EnvironmentName)
-                                                .WriteTo.RollingFile("log/screperel-api.txt");
+                                                .WriteTo.RollingFile("log/scraperel-api.txt");
                              ;
                              configure(loggerConfiguration, seqOptions, serilogOptions);
                            });

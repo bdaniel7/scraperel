@@ -11,14 +11,15 @@ namespace scraperel.api
 {
 	public class Startup
 	{
-		public Startup(IConfiguration configuration)
+		public Startup(IConfiguration configuration, IWebHostEnvironment environment)
 		{
 			Configuration = configuration;
+			Environment = environment;
 		}
 
 		public IConfiguration Configuration { get; }
+		public IWebHostEnvironment Environment { get; }
 
-		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
@@ -26,7 +27,7 @@ namespace scraperel.api
 			services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
 			services.AddHttpClient();
 
-			var scraperCS = Configuration.GetConnectionString("screperel");
+			var scraperCS = Configuration.GetConnectionString("scraperel");
 			var scraperAssemblyName = typeof(ScraperDbContext).Assembly.GetName().Name;
 
 			services.AddDbContext<ScraperDbContext>(options =>
@@ -40,7 +41,6 @@ namespace scraperel.api
 																								});
 		}
 
-		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			if (env.IsDevelopment())
@@ -51,10 +51,9 @@ namespace scraperel.api
 			//app.UseHttpsRedirection();
 
 			app.UseRouting();
-
-			app.UseOpenApi();    
-			app.UseSwaggerUi3(); 
-			app.UseReDoc();      
+			app.UseOpenApi();
+			app.UseSwaggerUi3();
+			app.UseReDoc();
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
