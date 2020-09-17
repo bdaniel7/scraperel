@@ -4,6 +4,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scraperel.scraper", "scrape
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scraperel.api", "scraperel.api\scraperel.api.csproj", "{DD20663F-86E2-4300-BF71-B5B7A4BF2201}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{A5492C10-462B-4941-8F8F-0CD61211C848}"
+ProjectSection(SolutionItems) = preProject
+	docker-compose.yml = docker-compose.yml
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scraperel.model", "scraperel.model\scraperel.model.csproj", "{7CEA48DF-D345-405C-848B-D1056587B263}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +25,9 @@ Global
 		{DD20663F-86E2-4300-BF71-B5B7A4BF2201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD20663F-86E2-4300-BF71-B5B7A4BF2201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD20663F-86E2-4300-BF71-B5B7A4BF2201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CEA48DF-D345-405C-848B-D1056587B263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CEA48DF-D345-405C-848B-D1056587B263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CEA48DF-D345-405C-848B-D1056587B263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CEA48DF-D345-405C-848B-D1056587B263}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

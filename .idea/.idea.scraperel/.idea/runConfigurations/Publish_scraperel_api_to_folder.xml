@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Publish scraperel.api to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
+    <riderPublish runtime="linux-musl-x64" target_folder="$PROJECT_DIR$/scraperel.api/bin/Release/netcoreapp3.1/publish" target_framework="netcoreapp3.1" uuid_high="-2512896169040788736" uuid_low="-4651737139749379583" />
+    <method v="2" />
+  </configuration>
+</component>
